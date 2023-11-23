@@ -1,0 +1,39 @@
+main > div{
+    border: 1px solid black;
+    margin:10px;
+    width: calc(32.1%);
+    text-align: center;
+    font-size: 45px;
+}
+main{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+footer{
+    background-color: gray;
+    text-align: center;
+    color: white;
+}
+header{
+    background-color: gray;
+    text-align: center;
+    color: white;
+}
+@media screen and (max-width:600px) {
+    main{
+        display: block;
+        
+    }
+    main > div {
+        width: 100%;
+        margin: 10px 0;
+        font-size: 15px;
+    }
+
+}
+@media screen and (min-width:600px) and (max-width:800px){
+    main > div{
+        font-size: 30px;
+    }
+}
