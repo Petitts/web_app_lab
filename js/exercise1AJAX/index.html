@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Actual Currency</title>
+        <script>
+            async function apiRequest(){
+                const response = await fetch('https://api.currencyapi.com/v3/latest?apikey=GF9w85SLtC7UaTYA49hVKBzFwjdhTHdGdCqAKDkY&base_currency=USD');
+                //const response = await fetch('https://www.reddit.com/r/all/top.json?limit=10')
+                const data = await response.json();
+                const currency = data.data;
+                const currArray = Object.entries(currency);
+                console.log(currArray)
+                //currArray.forEach(curr => document.write(curr[1].code+":"+curr[1].value))
+                let length = currArray.length;
+                let counter = 0;
+                for (let i=0; i<length;i++){
+                    document.write(currArray[i][1].code+":"+currArray[i][1].value.toFixed(2)+"&emsp;");
+                    counter=counter+1;
+                    if(counter%5==0){
+                        document.write('<br>')
+                    }
+                }
+                
+            }
+        </script>
+    </head>
+    <body onload="apiRequest()">
+
+    </body>
+</html>
