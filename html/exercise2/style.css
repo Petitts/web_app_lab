@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+main{
+    display:flex;
+    flex-wrap: nowrap;
+}
+#leftMenu, #rightMenu{
+    width: calc(100% * 1/4);
+}
+#center{
+    width: calc(100% * 1/2);
+}
+footer{
+    clear: both;
+    text-align: center;
+    background-color: red;
+}
+.menuElement{
+    background-color: gray;
+    margin-bottom: 0.5em;
+}
+@media screen and (max-width:600px) {
+    main{
+        display: block;
+    }
+}
+@media screen and (min-width:600px) and (max-width: 800px) {
+    main{
+        flex-wrap: wrap;
+    }
+    #leftMenu{
+        width: 100%;
+    }
+    #center{
+        width: calc(100% * 3/4);
+    }
+}
